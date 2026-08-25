@@ -3,13 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:taiga-auth": "tsx --test integrations/taiga/client.auth.test.ts",
+    "test:overlay": "playwright test --config playwright.overlay.config.ts",
+    "test:automation": "npx tsx --test agents/qa-automation/status.test.ts agents/qa-automation/generate.test.ts agents/qa-automation/generate.recovery.test.ts agents/qa-automation/intent.test.ts agents/qa-automation/app-url.test.ts agents/qa-automation/deal-url.test.ts agents/qa-automation/product-context.test.ts agents/qa-automation/interaction.test.ts agents/qa-automation/validation.test.ts agents/qa-automation/discover.fields.test.ts",
+    "test:reviewer": "npx tsx --test agents/qa-reviewer/index.test.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@playwright/test": "^1.62.1",
-    "@types/node": "^26.2.0"
+    "@types/node": "^26.2.0",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "openai": "^6.49.0"
   }
 }

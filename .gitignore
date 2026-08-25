@@ -1,8 +1,42 @@
+# Secrets and local auth (never commit)
+.env
+.env.*
+!.env.example
+.taiga-auth.json
 
-# Playwright
+# Dependencies
 node_modules/
+
+# Playwright runtime output
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+**/test-results/
+**/test-results/**
+*.webm
+*.zip
+
+# Pipeline runtime artifacts (created when the orchestrator runs)
+artifacts/*
+!artifacts/.gitkeep
+
+# Logs and caches
+*.log
+npm-debug.log*
+.npm
+*.tsbuildinfo
+dist/
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.idea/
+*.iml
+*.swp
+*~
+.vscode/
